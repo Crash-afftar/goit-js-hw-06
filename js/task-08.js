@@ -18,6 +18,6 @@ function handleSubmit(event) {
     alert("Заповніть, будь ласка, всі поля!");
   }
 
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  console.log({email: email.value, password: password.value});
   event.currentTarget.reset();
 }

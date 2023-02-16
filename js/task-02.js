@@ -13,7 +13,7 @@ const igredientsContainer = document.getElementById('ingredients')
 //   .join('');
 
 // igredientsContainer.innerHTML = tagElements;
-
+const items = [];
 ingredients.forEach(ingredient => { 
   
   // Створить окремий елемент <li>
@@ -25,6 +25,8 @@ ingredients.forEach(ingredient => {
   // Додасть елементу клас item.
   liEl.classList.add('item');
 
-  // Після чого, вставить усі <li> за одну операцію у список ul#ingredients.
-  igredientsContainer.append(liEl);
+  items.push(liEl)
+  
 })
+// Після чого, вставить усі <li> за одну операцію у список ul#ingredients.
+igredientsContainer.append(...items);

@@ -15,18 +15,16 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
-images.forEach(image => { 
-  const liEl = gallery.insertAdjacentHTML('afterbegin', `<li class="list"><img class="photo" src="${image.url}" width="300" alt="${image.alt}"></li>`);
-  
-gallery.style.display = "flex";
+const liEl = images.map(image => `<li><img src='${image.url}' alt='${image.alt}' width = 320px></li>`).join('');
+gallery.insertAdjacentHTML('afterbegin', liEl);
+gallery.style.display = "flex"; 
 gallery.style.gap = "100px";
 gallery.style.padding = "100px";
 gallery.style.justifyContent = "center";
 gallery.style.alignItems = "center";
 gallery.style.listStyle = "none";
 gallery.style.backgroundColor = "grey";
-})
-  
+
 // Напиши скрипт для створення галереї зображень на підставі масиву даних. HTML містить список ul.gallery.
 // Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>. Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
 
